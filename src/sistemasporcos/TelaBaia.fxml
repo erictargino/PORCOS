@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="354.0" prefWidth="490.0" style="-fx-background-color: #FFC0CB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <JFXTextField fx:id="CB_id" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="183.0" layoutY="104.0" promptText="ID">
+      <JFXTextField fx:id="CB_id" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="139.0" layoutY="86.0" promptText="ID">
          <font>
             <Font name="Bodoni MT Condensed" size="19.0" />
          </font>
@@ -17,7 +17,7 @@
             <Insets bottom="10.0" top="10.0" />
          </padding>
       </JFXTextField>
-      <JFXTextField fx:id="CB_nome" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="183.0" layoutY="148.0" promptText="TAMANHO">
+      <JFXTextField fx:id="CB_nome" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="139.0" layoutY="143.0" promptText="TAMANHO">
          <font>
             <Font name="Bodoni MT Condensed" size="19.0" />
          </font>
@@ -25,7 +25,7 @@
             <Insets bottom="10.0" top="30.0" />
          </padding>
       </JFXTextField>
-      <JFXTextField fx:id="CB_limpo" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="183.0" layoutY="212.0" promptText="LIMPO? (S OU N)">
+      <JFXTextField fx:id="CB_limpo" alignment="CENTER" focusColor="WHITE" labelFloat="true" layoutX="139.0" layoutY="223.0" promptText="LIMPO? (S OU N)">
          <font>
             <Font name="Bodoni MT Condensed" size="19.0" />
          </font>
@@ -33,12 +33,22 @@
             <Insets bottom="10.0" top="30.0" />
          </padding>
       </JFXTextField>
-      <Label layoutX="186.0" layoutY="39.0" prefHeight="38.0" prefWidth="119.0" text="CADASTRO BAIA" textFill="#5b5b5b">
+      <Label layoutX="139.0" layoutY="34.0" prefHeight="39.0" prefWidth="213.0" text="CADASTRO BAIA" textFill="#5b5b5b">
          <font>
-            <Font name="Bodoni MT Condensed" size="27.0" />
+            <Font size="27.0" />
          </font>
       </Label>
-      <JFXButton fx:id="CB_cadastro" layoutX="201.0" layoutY="302.0" style="-fx-background-color: #eea9b8;" text="CADASTRAR">
+      <JFXButton fx:id="CB_cadastro" layoutX="25.0" layoutY="298.0" style="-fx-background-color: #eea9b8;" text="CADASTRAR">
+         <font>
+            <Font name="Bodoni MT Condensed" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="CB_remover" layoutX="190.0" layoutY="298.0" style="-fx-background-color: #eea9b8;" text="REMOVER">
+         <font>
+            <Font name="Bodoni MT Condensed" size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="CB_cadastro2" layoutX="337.0" layoutY="298.0" style="-fx-background-color: #eea9b8;" text="EDITAR">
          <font>
             <Font name="Bodoni MT Condensed" size="19.0" />
          </font>
