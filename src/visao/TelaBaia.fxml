@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane fx:id="borderCbaia" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControlerBaia">
+   <center>
+      <VBox alignment="CENTER" prefHeight="490.0" prefWidth="590.0" spacing="30.0" style="-fx-background-color: #FFC0CB;">
+         <children>
+            <Label prefHeight="39.0" prefWidth="213.0" text="CADASTRO BAIA" textFill="#5b5b5b">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="CB_id" alignment="CENTER" focusColor="WHITE" labelFloat="true" promptText="ID">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="19.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="CB_nome" alignment="CENTER" focusColor="WHITE" labelFloat="true" promptText="TAMANHO">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="19.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" top="30.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="CB_limpo" alignment="CENTER" focusColor="WHITE" labelFloat="true" promptText="LIMPO? (S OU N)">
+               <font>
+                  <Font name="Bodoni MT Condensed" size="19.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" top="30.0" />
+               </padding>
+            </JFXTextField>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <JFXButton fx:id="CB_cadastro" prefHeight="39.0" prefWidth="96.0" style="-fx-background-color: #eea9b8;" text="CADASTRAR">
+                     <font>
+                        <Font name="Bodoni MT Condensed" size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="CB_remover" prefHeight="39.0" prefWidth="89.0" style="-fx-background-color: #eea9b8;" text="REMOVER">
+                     <font>
+                        <Font name="Bodoni MT Condensed" size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="CB_cadastro2" prefHeight="40.0" prefWidth="87.0" style="-fx-background-color: #eea9b8;" text="EDITAR">
+                     <font>
+                        <Font name="Bodoni MT Condensed" size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="Voltar" onAction="#voltarMenu2" prefHeight="39.0" prefWidth="83.0" style="-fx-background-color: black;" text="MENU" textFill="#f5efef">
+                     <font>
+                        <Font name="Bodoni MT Condensed" size="19.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

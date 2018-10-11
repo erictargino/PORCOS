@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderBaia" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorPorcoBaia">
+   <center>
+      <VBox fx:id="VboxControleBaias" alignment="CENTER" prefHeight="491.0" prefWidth="590.0" spacing="30.0" style="-fx-background-color: #FFC0CB;">
+         <children>
+            <Label prefHeight="46.0" prefWidth="295.0" text="CONTROLE DE BAIAS" textFill="#5b5b5b">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="Controle_id" alignment="CENTER" labelFloat="true" prefHeight="31.0" prefWidth="374.0" promptText="ID" />
+            <JFXTextField fx:id="Controle_idPorco" alignment="CENTER" labelFloat="true" promptText="ID PORCO" />
+            <JFXTextField fx:id="Controle_idBaia" alignment="CENTER" labelFloat="true" prefHeight="31.0" prefWidth="169.0" promptText="ID BAIA" />
+            <JFXButton fx:id="Ver_Resultado" prefHeight="36.0" onAction="#mostrarPB" prefWidth="169.0" style="-fx-background-color: BLACK;" text="VER PORCOS NAS BAIAS" textFill="PINK" />
+            <HBox alignment="CENTER" prefHeight="145.0" prefWidth="590.0" spacing="20.0">
+               <children>
+                  <JFXButton fx:id="Controle_add" prefHeight="34.0" prefWidth="97.0" style="-fx-background-color: #eea9b8;" text="ADICIONAR" />
+                  <JFXButton fx:id="Controle_retirar" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #eea9b8;" text="RETIRAR" />
+                  <JFXButton fx:id="Controle_trocar" prefHeight="36.0" prefWidth="89.0" style="-fx-background-color: #eea9b8;" text="TROCAR" />
+                  <JFXButton fx:id="Voltar" onAction="#voltarMenu3" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: black;" text="MENU" textFill="#f5efef">
+                     <font>
+                        <Font name="Bodoni MT Condensed" size="19.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
