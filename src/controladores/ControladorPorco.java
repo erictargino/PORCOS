@@ -9,6 +9,10 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +20,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import modelos.Suino;
+import persistencia.SuinoDAO;
 
 /**
  * FXML Controller class
@@ -45,6 +51,8 @@ public class ControladorPorco implements Initializable {
     @FXML
     private JFXButton Voltar;
     
+    private SuinoDAO suinos = new SuinoDAO();
+    
     @FXML
     private void voltarMenu(){
         
@@ -56,6 +64,21 @@ public class ControladorPorco implements Initializable {
         }
         
     }
+    
+    @FXML
+    private void addPorco() throws ParseException{
+        
+        int id = Integer.parseInt(CP_id.getText());
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        java.sql.Date data_nasc = new java.sql.Date(format.parse(CP_nasc.getText()).getTime());
+        java.sql.Date data_aqui = new java.sql.Date(format.parse(CP_aquisicao.getText()).getTime());
+
+        
+        Suino porco = new Suino(id,CP_nome.getText(),data_nasc, data_aqui);
+        suinos.insertPorco(porco);
+        
+    }
+    
 
     /**
      * Initializes the controller class.

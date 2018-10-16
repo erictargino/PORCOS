@@ -1,18 +1,20 @@
  
 package modelos;
 
+import java.sql.Date;
+
 /**
  *
  * @author Aluno
  */
-public class Suino {
+public class Suino implements Comparable<Suino> {
     
     private int id;
     private String nome;
-    private String data_nasc;
-    private String data_aqui;
+    private Date data_nasc;
+    private Date data_aqui;
 
-    public Suino(int id, String nome, String data_nasc, String data_aqui) {
+    public Suino(int id, String nome, Date data_nasc, Date data_aqui) {
         this.id = id;
         this.nome = nome;
         this.data_nasc = data_nasc;
@@ -35,20 +37,25 @@ public class Suino {
         this.nome = nome;
     }
 
-    public String getData_nasc() {
+    public Date getData_nasc() {
         return data_nasc;
     }
 
-    public void setData_nasc(String data_nasc) {
+    public void setData_nasc(Date data_nasc) {
         this.data_nasc = data_nasc;
     }
 
-    public String getData_aqui() {
+    public Date getData_aqui() {
         return data_aqui;
     }
 
-    public void setData_aqui(String data_aqui) {
+    public void setData_aqui(Date data_aqui) {
         this.data_aqui = data_aqui;
+    }
+
+    @Override
+    public int compareTo(Suino t) {
+        return this.getNome().compareTo(t.getNome());
     }
   
 }

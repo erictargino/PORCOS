@@ -44,7 +44,7 @@
                         <Font name="Bodoni MT Condensed" size="19.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="CP_cadastro" prefHeight="42.0" prefWidth="133.0" style="-fx-background-color: #eea9b8;" text="CADASTRAR">
+                  <JFXButton fx:id="CP_cadastro" onAction="#addPorco" prefHeight="42.0" prefWidth="133.0" style="-fx-background-color: #eea9b8;" text="CADASTRAR">
                      <font>
                         <Font name="Bodoni MT Condensed" size="19.0" />
                      </font>

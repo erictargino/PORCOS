@@ -3,14 +3,14 @@ package modelos;
  *
  * @author Aluno
  */
-public class Baia {
+public class Baia implements Comparable<Baia>{
     
     private int id;
     private double tamanho;
-    private boolean baiaLimpa;
+    private String baiaLimpa;
     private Suino suinos;
 
-    public Baia(int id, double tamanho, boolean baiaLimpa) {
+    public Baia(int id, double tamanho,String baiaLimpa) {
         this.id = id;
         this.tamanho = tamanho;
         this.baiaLimpa = baiaLimpa;
@@ -32,12 +32,17 @@ public class Baia {
         this.tamanho = tamanho;
     }
 
-    public boolean isBaiaLimpa() {
+    public String isBaiaLimpa() {
         return baiaLimpa;
     }
 
-    public void setBaiaLimpa(boolean baiaLimpa) {
+    public void setBaiaLimpa(String baiaLimpa) {
         this.baiaLimpa = baiaLimpa;
+    }
+
+    @Override
+    public int compareTo(Baia t) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
