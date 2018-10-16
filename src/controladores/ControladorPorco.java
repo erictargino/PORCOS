@@ -52,6 +52,7 @@ public class ControladorPorco implements Initializable {
     private JFXButton Voltar;
     
     private SuinoDAO suinos = new SuinoDAO();
+    private Suino porco;
     
     @FXML
     private void voltarMenu(){
@@ -65,21 +66,43 @@ public class ControladorPorco implements Initializable {
         
     }
     
+    private void limpar(){
+        CP_nome.clear();
+        CP_id.clear();
+        CP_nasc.clear();
+        CP_aquisicao.clear();
+    }
+    
     @FXML
     private void addPorco() throws ParseException{
         
         int id = Integer.parseInt(CP_id.getText());
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
         java.sql.Date data_nasc = new java.sql.Date(format.parse(CP_nasc.getText()).getTime());
         java.sql.Date data_aqui = new java.sql.Date(format.parse(CP_aquisicao.getText()).getTime());
 
         
-        Suino porco = new Suino(id,CP_nome.getText(),data_nasc, data_aqui);
+        porco = new Suino(id,CP_nome.getText(),data_nasc, data_aqui);
         suinos.insertPorco(porco);
-        
+        limpar();
     }
     
-
+    @FXML
+    private void atualizarPorco(){
+        
+        System.out.println(CP_nome.getText());
+        String novoNome = CP_nome.getText();
+        suinos.updatePorco(novoNome, porco);
+        limpar();
+    }
+    
+    @FXML 
+    private void removerPorco(){
+        
+        int id = Integer.parseInt(CP_id.getText());
+        suinos.deletePorco(id);
+        limpar();
+    }
     /**
      * Initializes the controller class.
      */

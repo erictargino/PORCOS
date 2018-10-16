@@ -70,14 +70,14 @@ public class SuinoDAO {
         
     }
     
-    public boolean deletePorco(Suino su){
+    public boolean deletePorco(int id){
       
      try{   
         con.conecta();
         PreparedStatement preparaInstrucao;
 	preparaInstrucao = con.getConexao().prepareStatement(DELETEPORCO);
        
-        preparaInstrucao.setInt(1, su.getId());
+        preparaInstrucao.setInt(1, id);
         
         preparaInstrucao.execute();
         

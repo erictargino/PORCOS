@@ -16,6 +16,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.BorderPane;
+import modelos.Baia;
+import persistencia.BaiaDAO;
 
 /**
  * FXML Controller class
@@ -41,6 +43,10 @@ public class ControlerBaia implements Initializable {
     @FXML
     private JFXButton Voltar;
     
+    private Baia baia;
+    
+    private BaiaDAO bdbaia = new BaiaDAO();
+    
      @FXML
      private void voltarMenu2(){
         
@@ -51,6 +57,30 @@ public class ControlerBaia implements Initializable {
             ex.printStackTrace();
         }
         
+    }
+    
+     private void limpar(){
+         CB_nome.clear();
+         CB_id.clear();
+         CB_limpo.clear();
+     }
+     
+     
+    @FXML
+    private void addBaia(){
+        
+        int id = Integer.parseInt(CB_id.getText());
+        Double tam = Double.parseDouble(CB_nome.getText());
+        
+        baia = new Baia(id,tam,CB_limpo.getText());
+        bdbaia.insertPorco(baia);
+        limpar();
+    }
+    
+    @FXML
+    private void removerBaia(){
+        
+        bdbaia.deletePorco(baia);
     }
 
     /**

@@ -23,7 +23,7 @@ public class Conexao {
     
     
     public void conecta(){
-        
+        System.out.println(CAMINHO);
         try {
                 Class.forName(DRIVER);
                 conexao = DriverManager.getConnection(CAMINHO, USUARIO, SENHA);

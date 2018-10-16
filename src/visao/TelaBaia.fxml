@@ -44,12 +44,12 @@
             </JFXTextField>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <JFXButton fx:id="CB_cadastro" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #eea9b8;" text="CADASTRAR">
+                  <JFXButton fx:id="CB_cadastro" onAction="#addBaia" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #eea9b8;" text="CADASTRAR">
                      <font>
                         <Font name="Bodoni MT Condensed" size="19.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton fx:id="CB_remover" prefHeight="42.0" prefWidth="113.0" style="-fx-background-color: #eea9b8;" text="REMOVER">
+                  <JFXButton fx:id="CB_remover" onAction="#removerBaia" prefHeight="42.0" prefWidth="113.0" style="-fx-background-color: #eea9b8;" text="REMOVER">
                      <font>
                         <Font name="Bodoni MT Condensed" size="19.0" />
                      </font>
