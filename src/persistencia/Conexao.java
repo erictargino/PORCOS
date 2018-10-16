@@ -17,7 +17,7 @@ public class Conexao {
     
     private static final String USUARIO = "postgres";
     private static final String SENHA = "postgre";
-    private static final String CAMINHO = "jdbc:postgresql://localhost:5433/sistemas_porcos";
+    private static final String CAMINHO = "jdbc:postgresql://localhost:5432/sistemas_porcos";//mudar LOCAL HOST quando for usar em outro locais COM PGADIN EM CASA É 5433
     private static final String DRIVER = "org.postgresql.Driver";
     private Connection conexao;
     

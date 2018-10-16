@@ -12,7 +12,7 @@
    <center>
       <VBox fx:id="VboxPorco" alignment="CENTER" prefHeight="490.0" prefWidth="590.0" spacing="30.0" style="-fx-background-color: #FFC0CB;">
          <children>
-            <Label prefHeight="39.0" prefWidth="138.0" text="CADASTRO PORCO" textFill="#5b5b5b">
+            <Label prefHeight="39.0" prefWidth="238.0" text="CADASTRO PORCO" textFill="#5b5b5b">
                <font>
                   <Font name="Bodoni MT Condensed" size="27.0" />
                </font>

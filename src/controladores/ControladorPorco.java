@@ -89,10 +89,9 @@ public class ControladorPorco implements Initializable {
     
     @FXML
     private void atualizarPorco(){
-        
-        System.out.println(CP_nome.getText());
-        String novoNome = CP_nome.getText();
-        suinos.updatePorco(novoNome, porco);
+        int id = Integer.parseInt(CP_id.getText());
+        System.out.println(id);
+        suinos.updatePorco(CP_nome.getText(), id);
         limpar();
     }
     

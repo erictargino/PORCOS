@@ -49,7 +49,7 @@ public class BaiaDAO {
         
     }
 
-    public boolean updateBaia(Double tamanho, Baia ba){
+    public boolean updateBaia(Double tamanho, int id){
       
      try{   
         con.conecta();
@@ -57,7 +57,7 @@ public class BaiaDAO {
 	preparaInstrucao = con.getConexao().prepareStatement(UPDATEBAIA);
         
         preparaInstrucao.setDouble(1, tamanho);
-        preparaInstrucao.setDouble(2, ba.getTamanho());
+        preparaInstrucao.setDouble(2, id);
         
         preparaInstrucao.execute();
         

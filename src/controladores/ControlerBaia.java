@@ -78,9 +78,20 @@ public class ControlerBaia implements Initializable {
     }
     
     @FXML
+    private void atualizarBaia(){
+        
+        int id = Integer.parseInt(CB_id.getText());
+        Double tam = Double.parseDouble(CB_nome.getText()); 
+        bdbaia.updateBaia(tam, id);
+         limpar();
+        
+    }
+    
+    @FXML
     private void removerBaia(){
         
         bdbaia.deletePorco(baia);
+        limpar();
     }
 
     /**

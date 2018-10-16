@@ -20,7 +20,7 @@ public class SuinoDAO {
     private final Conexao con = new Conexao();
     
     private final String INSERIRPORCO = "INSERT INTO porco(id, nome, data_nasc,data_aqui) VALUES (?, ?, ?,?);";
-    private final String UPDATEPORCO = "UPDATE PORCO SET NOME = ? WHERE NOME = ?";
+    private final String UPDATEPORCO = "UPDATE PORCO SET NOME = ? WHERE ID = ?";
     private final String DELETEPORCO = "Delete from porco WHERE ID = ? ;";
     private final String LISTARPORCOS = "SELECT * FROM PORCO;";
     
@@ -48,7 +48,7 @@ public class SuinoDAO {
         
     }
 
-    public boolean updatePorco(String nome, Suino su){
+    public boolean updatePorco(String nome, int id){
       
      try{   
         con.conecta();
@@ -56,7 +56,7 @@ public class SuinoDAO {
 	preparaInstrucao = con.getConexao().prepareStatement(UPDATEPORCO);
         
         preparaInstrucao.setString(1, nome.toUpperCase());
-        preparaInstrucao.setString(2, su.getNome().toUpperCase());
+        preparaInstrucao.setInt(2, id);
         
         preparaInstrucao.execute();
         
