@@ -62,7 +62,7 @@ public class MostrarEmBaiaController implements Initializable {
     private JFXButton btVoltar;
 
  
-     @FXML
+    @FXML
     private void voltarBaias(){
         
         try {
@@ -77,15 +77,22 @@ public class MostrarEmBaiaController implements Initializable {
     @FXML
     private void buscarPorcoEmBaia(){
         
+        /*
         porcoembaia.addAll(pb.listPorcoEmBaia());
         tableIdePorcos.setItems(porcoembaia);
         ColunaIdPorcos.setCellValueFactory(new  PropertyValueFactory<Suino, Integer>("id"));
         ColunaIdidBaias.setCellValueFactory(new  PropertyValueFactory<Baia, Integer>("id"));
+        */
         
+        ObservableList<PorcoEmBaia> porcoList = FXCollections.observableArrayList(pb.listPorcoEmBaia());
+        tableIdePorcos.getColumns().get(0).setCellValueFactory(new  PropertyValueFactory<>("id_porco"));
+        tableIdePorcos.getColumns().get(1).setCellValueFactory(new  PropertyValueFactory<>("id_baia"));
+        tableIdePorcos.setItems(porcoList);
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        buscarPorcoEmBaia();
         // TODO
     }    
     

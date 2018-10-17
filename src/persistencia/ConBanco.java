@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 public class ConBanco {
     private Connection connection;
-    private String url = "jdbc:postgresql://localhost:5433/sistemas_porcos"; // 5432 usar esse na escola CVT
+    private String url = "jdbc:postgresql://localhost:5432/sistemas_porcos"; // 5432 usar esse na escola CVT
     private String user = "postgres";
     private String password = "postgre";
     

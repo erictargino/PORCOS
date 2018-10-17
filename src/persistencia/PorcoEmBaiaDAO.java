@@ -23,7 +23,7 @@ public class PorcoEmBaiaDAO {
     private final String INSERIRPORCOEMBAIA = "INSERT INTO porco_na_baia(id, id_porco, id_baia) VALUES (?,?, ?);";
     private final String UPDATEPORCOEMBAIA = "UPDATE porco_na_baia SET ID_BAIA = ? WHERE ID = ?";
     private final String DELETEPORCOEMBAIA = "Delete from porco_na_baia WHERE ID = ? ;";
-    private final String LISTARPORCOEMBAIS = "SELECT * FROM BAIA";
+    private final String LISTARPORCOEMBAIS = "SELECT * FROM porco_na_baia";
     
     
     public boolean insertPorcoEmBaia(PorcoEmBaia pe){
@@ -108,12 +108,12 @@ public class PorcoEmBaiaDAO {
 				PorcoEmBaia a = new PorcoEmBaia(rs.getInt("id"), rs.getInt("id_porco"), rs.getInt("id_baia"));
 				lista.add(a); 
 			}
-			// DESCONECTA
+			
 			con.desconecta();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		Collections.sort(lista);
+		//Collections.sort(lista);
 		return lista;
 	}
 }

@@ -14,6 +14,8 @@ public class PorcoEmBaia implements Comparable<PorcoEmBaia> {
     private int id;
     private int id_porco;
     private int id_baia;
+   
+            
 
     public PorcoEmBaia(int id, int id_porco, int id_baia) {
         this.id = id;
@@ -47,7 +49,9 @@ public class PorcoEmBaia implements Comparable<PorcoEmBaia> {
 
     @Override
     public int compareTo(PorcoEmBaia t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
+         throw new UnsupportedOperationException("Not supported yet.");
+      
     }
 
    
