@@ -17,6 +17,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import modelos.PorcoEmBaia;
+import persistencia.PorcoEmBaiaDAO;
 
 /**
  * FXML Controller class
@@ -45,6 +47,10 @@ public class ControladorPorcoBaia implements Initializable {
     private JFXButton Controle_trocar;
     @FXML
     private JFXButton Voltar;
+    
+    private PorcoEmBaiaDAO pb = new PorcoEmBaiaDAO();
+    
+    private PorcoEmBaia pbaia;
 
     
     @FXML  
@@ -69,6 +75,44 @@ public class ControladorPorcoBaia implements Initializable {
             ex.printStackTrace();
         }
         
+    }
+    
+    public void limpar(){
+        Controle_id.clear();
+        Controle_idPorco.clear();
+        Controle_idBaia.clear();
+    }
+    
+    @FXML
+    private void addPorcoEmBaia(){
+        
+        int id = Integer.parseInt(Controle_id.getText());
+        int id_porco = Integer.parseInt(Controle_idPorco.getText());
+        int id_baia = Integer.parseInt(Controle_idBaia.getText());
+        
+        pbaia = new PorcoEmBaia(id,id_porco,id_baia);
+        
+        pb.insertPorcoEmBaia(pbaia);
+        limpar();
+        
+    }
+    
+    @FXML
+    private void trocarPorcoDeBaia(){
+        
+        int id = Integer.parseInt(Controle_id.getText());
+        int id_baia = Integer.parseInt(Controle_idBaia.getText());
+        
+        pb.updatePorcoEmBaia(id_baia, id);
+        limpar();
+    }
+    
+    @FXML
+    private void tirarPorcoDeBaia(){
+        
+        int id = Integer.parseInt(Controle_id.getText());
+        pb.deleteAutor(id);
+        limpar();
     }
     /**
      * Initializes the controller class.

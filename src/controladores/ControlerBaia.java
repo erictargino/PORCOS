@@ -81,16 +81,16 @@ public class ControlerBaia implements Initializable {
     private void atualizarBaia(){
         
         int id = Integer.parseInt(CB_id.getText());
-        Double tam = Double.parseDouble(CB_nome.getText()); 
-        bdbaia.updateBaia(tam, id);
-         limpar();
+        bdbaia.updateBaia(CB_limpo.getText(), id);
+        limpar();
         
     }
     
     @FXML
     private void removerBaia(){
         
-        bdbaia.deletePorco(baia);
+        int id = Integer.parseInt(CB_id.getText());
+        bdbaia.deletePorco(id);
         limpar();
     }
 

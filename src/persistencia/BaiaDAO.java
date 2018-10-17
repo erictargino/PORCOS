@@ -21,7 +21,7 @@ public class BaiaDAO {
     private final Conexao con = new Conexao();
     
     private final String INSERIRBAIA = "INSERT INTO baia(id, tamanho,indicador_limpeza) VALUES (?, ?, ?);";
-    private final String UPDATEBAIA = "UPDATE BAIA SET NOME = ? WHERE NOME = ?";
+    private final String UPDATEBAIA = "UPDATE BAIA SET indicador_limpeza = ? WHERE ID = ?";
     private final String DELETEBAIA = "Delete from baia WHERE ID = ? ;";
     private final String LISTARBAIA = "SELECT * FROM BAIA;";
     
@@ -49,14 +49,14 @@ public class BaiaDAO {
         
     }
 
-    public boolean updateBaia(Double tamanho, int id){
+    public boolean updateBaia(String i, int id){
       
      try{   
         con.conecta();
         PreparedStatement preparaInstrucao;
 	preparaInstrucao = con.getConexao().prepareStatement(UPDATEBAIA);
         
-        preparaInstrucao.setDouble(1, tamanho);
+        preparaInstrucao.setString(1, i);
         preparaInstrucao.setDouble(2, id);
         
         preparaInstrucao.execute();
@@ -71,7 +71,7 @@ public class BaiaDAO {
         
     }
     
-   public boolean deletePorco(Baia ba){
+   public boolean deletePorco(int id){
       
      try{   
          
@@ -79,7 +79,7 @@ public class BaiaDAO {
         PreparedStatement preparaInstrucao;
 	preparaInstrucao = con.getConexao().prepareStatement(DELETEBAIA);
        
-        preparaInstrucao.setInt(1, ba.getId());
+        preparaInstrucao.setInt(1, id);
         
         preparaInstrucao.execute();
         

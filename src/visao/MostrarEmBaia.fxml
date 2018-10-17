@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -26,7 +27,12 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <JFXButton fx:id="btVoltar" onAction="#voltarBaias" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: black;" text="VOLTAR" textFill="#d667c2" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <JFXButton fx:id="btVoltar" onAction="#buscarPorcoEmBaia" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: black;" text="VISUALIZAR" textFill="#d667c2" />
+                  <JFXButton fx:id="btVoltar1" onAction="#voltarBaias" prefHeight="25.0" prefWidth="84.0" style="-fx-background-color: black;" text="VOLTAR" textFill="#d667c2" />
+               </children>
+            </HBox>
          </children>
       </VBox>
    </center>
