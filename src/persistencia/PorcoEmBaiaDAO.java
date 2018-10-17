@@ -23,7 +23,7 @@ public class PorcoEmBaiaDAO {
     private final String INSERIRPORCOEMBAIA = "INSERT INTO porco_na_baia(id, id_porco, id_baia) VALUES (?,?, ?);";
     private final String UPDATEPORCOEMBAIA = "UPDATE porco_na_baia SET ID_BAIA = ? WHERE ID = ?";
     private final String DELETEPORCOEMBAIA = "Delete from porco_na_baia WHERE ID = ? ;";
-    private final String LISTARPORCOEMBAIS = "SELECT * FROM porco_na_baia";
+    private final String LISTARPORCOEMBAIS = "SELECT * FROM porco_na_baia ORDER BY ID_PORCO";
     
     
     public boolean insertPorcoEmBaia(PorcoEmBaia pe){
