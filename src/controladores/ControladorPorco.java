@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import modelos.Suino;
@@ -29,7 +30,8 @@ import persistencia.SuinoDAO;
  * @author Heverton
  */
 public class ControladorPorco implements Initializable {
-
+    @FXML
+    private Button verBotao;
     @FXML
     private BorderPane borderPorco;
     @FXML
@@ -101,6 +103,17 @@ public class ControladorPorco implements Initializable {
         int id = Integer.parseInt(CP_id.getText());
         suinos.deletePorco(id);
         limpar();
+    }
+    @FXML
+    private void visualizar(){
+        
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/visao/VizualizarPorco.fxml"));
+            borderPorco.setCenter(root);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        
     }
     /**
      * Initializes the controller class.
